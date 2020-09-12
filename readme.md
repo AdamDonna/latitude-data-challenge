@@ -19,11 +19,19 @@ The original problem was
 
 ## Installation
 
-This solution can be run on with pipenv
+This solution can be run on with pipenv to be more or less reusable across environments
 
 ```bash
 pipenv install
 pipenv shell
+```
+
+## Tests
+
+This project leverages pythons `unittest` package 
+Test can be run with 
+```bash
+pipenv run python -m unittest
 ```
 
 ## Usage

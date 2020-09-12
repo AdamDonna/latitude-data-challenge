@@ -25,7 +25,10 @@ class Generatedata:
             writer = csv.DictWriter(csvfile, fieldnames=["first_name", "last_name", "address", "date_of_birth"])
             writer.writeheader()
             total_rows = 0
+            # while loop because a for range creates a list which might get really big and slow
             while(total_rows <= self.num_rows):
+                if total_rows> 0 and total_rows%10000 == 0:
+                    print(f"{total_rows} rows written to file")
                 writer.writerow(self.generate_row())
                 total_rows += 1
 
@@ -35,7 +38,7 @@ if __name__ == "__main__":
     parser.add_argument('num_rows', type=int, help='Number of rows to be generated')
 
     args = parser.parse_args()
-    
+
     fileGenerator = Generatedata(num_rows=args.num_rows, filename=args.output_file_name)
     fileGenerator.write_file()
     print(f"File created with {args.num_rows} at {args.output_file_name}")
