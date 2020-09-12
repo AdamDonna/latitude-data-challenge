@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 .DS_Store
+tmp.csv
+anon.csv
 
 # C extensions
 *.so
